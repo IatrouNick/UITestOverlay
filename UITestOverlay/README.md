@@ -12,3 +12,24 @@ UITestOverlay is a lightweight .NET library that adds a visual overlay to your b
 Install via NuGet:
 
 dotnet add package UITestOverlay
+
+🚀 Quick Usage
+
+🔧 1. Initialize the Overlay
+Call once before your first step:
+
+await StepOverlay.InitAsync(page);
+🧠 This injects the necessary CSS + HTML into the page.
+-----------------------------------------------------------------
+
+✏️ 2. Show Steps as They Happen
+Call this before (or after) any test action:
+
+await StepOverlay.ShowAsync(page, "🧪 Filling login form");
+📋 The latest step will appear highlighted, and previous ones stay visible.
+-----------------------------------------------------------------
+
+🧹 3. Clear the Overlay (optional)
+Call when the test finishes or resets:
+
+await StepOverlay.ClearAsync(page);
